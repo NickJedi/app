@@ -1,0 +1,45 @@
+@import '../variable'
+
+#app
+  width: 100%
+  padding: 7px
+
+  header
+    margin-bottom: $padding
+    display: grid
+    grid-template-areas: 'title' 'nav'
+    grid-template-rows: repeat(2, 75px)
+    grid-gap: $padding
+
+    .project-title
+      background-color: darkorange
+      grid-area: title
+
+    .nav
+      background-color: cornflowerblue
+      grid-area: nav
+
+  main
+    display: grid
+    grid-template-areas: 'user' 'wall'
+    grid-template-rows: repeat(2, auto)
+    grid-gap: $padding
+
+    .user
+      background-color: blueviolet
+      grid-area: user
+
+    .wall
+      background-color: greenyellow
+      grid-area: wall
+
+@media (min-width: 661px)
+  #app header
+    grid-template-areas: 'title nav'
+    grid-template-rows: 75px
+    grid-template-columns: minmax(320px, 350px) minmax(350px, auto)
+
+  #app main
+    grid-template-areas: 'user wall'
+    grid-template-rows: auto
+    grid-template-columns: minmax(320px, 350px) minmax(350px, auto)
